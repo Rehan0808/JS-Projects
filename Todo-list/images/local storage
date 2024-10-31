@@ -1,0 +1,59 @@
+local storage ley chai website ko daat key value pair ma save garxa 
+(website refresh garda , website ko link copy garerw arko tab ma kholda rw website
+katerw feri tei website kholda ni tya ko data delete hudainw )
+
+ setitem = stores the key or value
+
+ getitem =get the value by key (key ma kun value xa vanxa)
+
+ removeitem = remove teh key with its value
+
+ clear() = delete every thing
+
+ key(index) = get the key on the given position 
+
+ length = the number of stored items 
+
+
+ // * NOTE :1) local storage ma keys rw value 2 tai String hunu parxa 
+ 2) We can use the two JSON METHODS to store  objects in localStorage :
+ 
+ JSON.stringify(object) // * Converts objects to JSON strings 
+ JSON.parse(string) // * Converts string to objects(must be a valid JSON )
+
+
+
+
+ The loadTasks() function is responsible for loading tasks from localStorage and recreating them in the DOM 
+    when the page is reloaded or reopened.
+
+    If you store tasks in localStorage using saveTasks() and don't have a way to reload them, 
+    your task list will always appear empty when you refresh the page—even though the tasks are still saved in localStorage.
+  
+
+    Explanation:
+localStorage.getItem("tasks")
+
+Retrieve the saved tasks from localStorage. This data is stored as a JSON string.
+JSON.parse()
+
+Convert the JSON string back into a JavaScript array of objects. If no tasks are found (e.g., the first time the page loads), it returns an empty array using || [].
+savedTasks.forEach()
+
+Loop through each task object in the savedTasks array.
+createTaskElement(task.text)
+
+Call the createTaskElement() function to recreate the task in the DOM using the text value.
+listcontainer.lastElementChild.classList.add("checked")
+
+If the task’s checked property is true, the "checked" class is added to the last task created (which corresponds to the current task in the loop).
+
+
+
+How saveTasks() and loadTasks() Work Together:
+saveTasks():
+
+Stores the current list of tasks in localStorage every time you add or remove a task.
+loadTasks():
+
+Fetches the stored tasks from localStorage and recreates them on the webpage when the page reloads.
