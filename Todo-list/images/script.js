@@ -60,7 +60,7 @@ function saveTasks() {
         });
     });
 
-    // Step 3: Convert the tasks array to a JSON string and store it in localStorage.
+    // Step 3: Convert the tasks array to a JSON string and store it in localStorage.localStorage can only store data as strings
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 

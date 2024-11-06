@@ -35,6 +35,8 @@ async function checkWeather(cityName) {
 
     // Save data to localStorage
     localStorage.setItem("weatherData", JSON.stringify(data));
+    
+
 }
 
 function displayWeather(data) {
